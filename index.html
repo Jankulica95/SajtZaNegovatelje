@@ -110,15 +110,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav id="navbar">
   <a href="#" class="logo">
-    <div class="logo-icon">🏡</div>
+    <div class="logo-icon"><img src="logo.png" alt="Vreme za njih logo" style="width:42px;height:42px;object-fit:contain;border-radius:50%;"></div>
     <div class="logo-text">
-      <strong>Vreme za njih</strong>
+      <strong>Vreme za vas</strong>
       <span>Usluga druženja i podrške za starije</span>
     </div>
   </a>
@@ -129,7 +130,10 @@
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:0601234567" class="btn-call">📞 Zakažite poziv</a>
+    <a href="#kontakt" class="btn-call">
+      <span class="material-icons">email</span>
+      Kontaktirajte nas
+    </a>
     <div class="nav-phone">
       <strong>060 123 45 67</strong>
       <span>Viber / WhatsApp</span>
@@ -146,13 +150,16 @@
   <a href="#usluge" onclick="toggleMenu()">Usluge</a>
   <a href="#o-nama" onclick="toggleMenu()">O nama</a>
   <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
-  <a href="tel:0601234567" class="btn-primary" style="justify-content:center;">📞 060 123 45 67</a>
+  <a 
+    href="tel:0601234567" 
+    class="btn-primary" 
+    onclick="handleContactBtn(event)" 
+    style="justify-content:center;">📞 060 123 45 67</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="pocetna">
   <div class="hero-bg"></div>
-  <!-- Placeholder for real photo — replace src with actual image -->
   <img class="hero-img"
     src="https://images.pexels.com/photos/6918476/pexels-photo-6918476.jpeg"
     alt="Baka i negovateljica sede i razgovaraju uz kafu u bašti"
@@ -161,8 +168,14 @@
     <h1>Neko je uz vaše najmilije<em>kada vi ne stižete.</em></h1>
     <p>Druženje, podrška i svakodnevna pomoć<br>za starije osobe u Novom Sadu.</p>
     <div class="hero-btns">
-      <a href="tel:0601234567" class="btn-primary">📞 Zakažite poziv</a>
-      <a href="#usluge" class="btn-secondary">Saznajte kako funkcioniše ↓</a>
+      <a href="#kontakt" class="btn-primary">
+        <span class="material-icons">call</span>
+        Zakažite poziv
+      </a>
+      <a href="#usluge" class="btn-secondary">
+        Kako izgleda saradnja
+        <span class="material-icons">arrow_downward</span>
+      </a>
     </div>
   </div>
 </section>
@@ -187,7 +200,7 @@
     <div class="badge-icon">📍</div>
     <div>
       <strong>Novi Sad</strong>
-      <span>i šira okolna mesta</span>
+      <span>Dolazimo na vašu adresu</span>
     </div>
   </div>
   <div class="badge">
@@ -311,7 +324,7 @@
       </div>
     </div>
     <div>
-      <h2 class="section-title reveal">Kako funkcioniše?</h2>
+      <h2 class="section-title reveal">Kako izgleda saradnja</h2>
       <div class="steps reveal">
         <div class="step-row">
           <div class="step-num">1</div>
@@ -351,11 +364,15 @@
 
 <!-- O NAMA -->
 <section class="about-section" id="o-nama">
-  <div class="about-photo reveal">👩‍👩‍</div>
+  <div class="about-photo reveal">
+    <img src="logo.png" alt="Vreme za njih logo">
+  </div>
   <div class="about-text reveal">
     <h2 class="section-title">O nama</h2>
-    <p>Mi smo dve žene iz Novog Sada koje veruju da stariji zaslužuju pažnju, dostojanstvo i društvo – svaki dan.</p>
-    <p>Ovaj posao radimo srcem, sa toplinom, strpljenjem i potpunim poštovanjem prema vašim najmilijima.</p>
+    <p>Iza ove priče stoji ideja da stariji zaslužuju pažnju, dostojanstvo i društvo – svakog dana.</p>
+    <p>Verujemo da male stvari, poput razgovora, šetnje ili zajedničkog vremena, prave veliku razliku – bilo da se radi o Vama lično ili o nekome koga volite.</p>
+    <p>Zato smo ovu uslugu osmislili kao nešto što donosi više prisustva, sigurnosti i topline u svakodnevicu.</p>
+    <p>To je ono što svakodnevno pružamo, sa strpljenjem, toplinom i iskrenim poštovanjem prema svakome sa kim provodimo vreme.</p>
     <p class="tagline">Tu smo za vas. ❤️</p>
   </div>
   <div class="trust-card reveal">
@@ -378,44 +395,73 @@
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
-          Nismo. Pružamo nemedicinsku podršku – društvo, šetnje, nabavku, pratnju i pomoć u svakodnevnim aktivnostima. Ne dajemo lekove, ne kupamo i ne presvlačimo.
+          Ne pružamo medicinsku negu, ne dajemo terapiju i ne obavljamo zdravstvene intervencije. Naša uloga je društvo, podrška i pomoć u svakodnevici, a ne lečenje.
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          Koliko traje jedan dolazak?
+          Šta tačno podrazumeva Vaša usluga?
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
-          Dolasci mogu trajati od jednog sata pa nadalje, u zavisnosti od dogovora. Moguće su jednokratne posete, ali i redovni termini više puta nedeljno.
+          Naša usluga podrazumeva društvo i laku svakodnevnu pomoć starijim osobama – razgovor, šetnju, kafu, odlazak na kolače ili u pozorište, kao i pomoć u svakodnevnim stvarima poput nabavke, odlaska po lekove, lakših kućnih poslova i pratnje kod lekara.
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          Da li mogu da se kombinuju aktivnosti (šetnja, nabavka, druženje)?
+            Kome je usluga namenjena?
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
-          Naravno! Jedna poseta može da uključi šetnju, kratku nabavku i zajednički razgovor – sve prilagođavamo potrebama i željama vašeg najmilijeg.
+          Usluga je namenjena starijim osobama – ženama i muškarcima – koji žive sami ili imaju potrebu za više društva i podrške, kao i njihovim porodicama koje žele pouzdanu osobu uz svoje najmilije.
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          Da li porodica dobija povratnu informaciju?
+            Da li je moguće kombinovati boravak kod kuće i izlazak?
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
-          Da! Posle svake posete šaljemo kratak izveštaj porodici – šta smo radili, kako je osoba bila raspoložena i da li je sve prošlo po planu.
+          Da. Boravak kod kuće, šetnje, odlasci u grad, kod lekara ili na događaje mogu se slobodno kombinovati u okviru jednog dolaska. Sve vreme provedeno sa korisnikom računa se kao vreme usluge.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+            Koliko traje jedan dolazak?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-body">
+          Minimalno trajanje jednog dolaska je 2 sata.
+          Dolazak može trajati duže, u zavisnosti od dogovora i potreba korisnika.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+            Da li je obezbeđena diskrecija?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-body">
+          Apsolutno.
+          Diskrecija i privatnost korisnika i porodice su osnova našeg rada. Sve informacije ostaju poverljive.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+            Da li je moguće kombinovati boravak kod kuće i izlazak?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-body">
+          Da. Boravak kod kuće, šetnje, odlasci u grad, kod lekara ili na događaje mogu se slobodno kombinovati u okviru jednog dolaska. Sve vreme provedeno sa korisnikom računa se kao vreme usluge.
         </div>
       </div>
     </div>
 
     <!-- CONTACT FORM -->
     <div class="contact-box reveal">
-      <h3>Javite nam se da vidimo da li<br>smo pravi izbor za vas.</h3>
+      <h3>Javite nam se da zajedno pronađemo<br>najbolje rešenje za vas.</h3>
       <div class="contact-btns">
-        <a href="tel:0601234567" class="btn-phone">📞 060 123 45 67</a>
-        <a href="https://wa.me/381601234567" target="_blank" class="btn-whatsapp">📱 WhatsApp / Viber</a>
+        <!-- <a href="tel:0601234567" class="btn-phone">📞 060 123 45 67</a> -->
+        <!-- <a href="https://wa.me/381601234567" target="_blank" class="btn-whatsapp">📱 WhatsApp / Viber</a> -->
       </div>
 
       <!-- 
@@ -435,6 +481,7 @@
           <input type="text" name="ime" placeholder="Vaše ime" required>
           <input type="tel" name="telefon" placeholder="Broj telefona" required>
         </div>
+        <input type="email" name="email" placeholder="Vaša email adresa (opciono)">
         <input type="text" name="poruka_kratka" placeholder="Kratka poruka (opciono)">
         <textarea name="poruka" rows="3" placeholder="Opišite situaciju ili postavite pitanje..."></textarea>
         <input type="hidden" name="_subject" value="Novi upit – Vreme za njih">
@@ -447,7 +494,7 @@
       </div>
 
       <div class="form-note">
-        <span>📍 Novi Sad i okolna mesta</span>
+        <span>📍 Novi Sad</span>
         <span>⚡ Brzi odgovori – bez čekanja</span>
       </div>
     </div>
@@ -457,7 +504,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <strong>Vreme za njih</strong>
+    <strong>Vreme za vas</strong>
     <p>Usluga druženja i podrške za starije · Novi Sad</p>
   </div>
   <div class="footer-links">
@@ -465,70 +512,12 @@
     <a href="#usluge">Usluge</a>
     <a href="#o-nama">O nama</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="tel:0601234567">060 123 45 67</a>
+    <a>060 123 45 67</a>
+    <a href="mailto:vremezavas@gmail.com">vremezavas@gmail.com</a>
   </div>
-  <p class="footer-copy">© 2024 Vreme za njih. Sva prava zadržana.</p>
+  <p class="footer-copy">© 2024 Vreme za vas. Sva prava zadržana.</p>
 </footer>
 
-<script>
-  // Navbar shadow on scroll
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // FAQ accordion
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const body = item.querySelector('.faq-body');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-body').classList.remove('open');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      body.classList.add('open');
-    }
-  }
-
-  // Mobile menu
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-
-  // Form submit with Formspree
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
-      } else {
-        alert('Došlo je do greške. Molimo kontaktirajte nas direktno na 060 123 45 67.');
-      }
-    } catch {
-      alert('Nema internet konekcije. Pozovite nas direktno na 060 123 45 67.');
-    }
-  }
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>

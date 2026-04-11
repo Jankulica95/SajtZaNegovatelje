@@ -20,7 +20,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 110%; }
 
   body {
     font-family: 'Nunito', sans-serif;
@@ -48,16 +48,15 @@
   }
   .logo-icon {
     width: 42px; height: 42px;
-    background: var(--gold);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
+    overflow: hidden;
   }
   .logo-text { line-height: 1.1; }
   .logo-text strong {
     display: block;
     font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
+    font-size: 28px;
     color: var(--gold);
     font-weight: 400;
     letter-spacing: -0.01em;
@@ -76,8 +75,8 @@
   .nav-links a {
     text-decoration: none;
     color: var(--text);
-    font-size: .9rem;
-    font-weight: 400;
+    font-size: 19px;
+    font-weight: 700;
     transition: color .2s;
   }
   .nav-links a:hover { color: var(--gold); }
@@ -123,7 +122,7 @@
   /* ── HERO ── */
   .hero {
     margin-top: 70px;
-    min-height: 92vh;
+    min-height: 80vh;
     position: relative;
     display: flex; align-items: center;
     overflow: hidden;
@@ -165,7 +164,7 @@
     display: block;
   }
   .hero-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--muted);
     margin-bottom: 36px;
     animation: fadeUp .8s .15s ease both;
@@ -214,7 +213,12 @@
   }
   .badge {
     display: flex; align-items: flex-start; gap: 14px;
-    padding: 12px 0;
+    padding: 12px 24px 12px 0;
+    border-right: 1px solid var(--border);
+  }
+  .badge:last-child {
+    border-right: none;
+    padding-right: 0;
   }
   .badge-icon {
     font-size: 1.5rem;
@@ -222,12 +226,15 @@
     flex-shrink: 0;
     margin-top: 2px;
   }
+  .badge-icon-tst {
+    font-size: 40px;
+  }
   .badge strong {
-    display: block; font-size: .8rem; font-weight: 800;
+    display: block; font-size: 17px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .05em;
     color: var(--dark);
   }
-  .badge span { font-size: .78rem; color: var(--muted); }
+  .badge span { font-size: 15px; color: var(--muted); }
 
   /* ── SECTIONS general ── */
   section { padding: 72px 5%; }
@@ -291,7 +298,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
-    align-items: center;
+    align-items: stretch;
     box-shadow: inset 0 4px 24px rgba(160,100,20,0.06);
   }
   .services-grid {
@@ -331,14 +338,17 @@
     border-radius: 24px;
     overflow: hidden;
     background: linear-gradient(155deg, #E0C890 0%, #C8A060 50%, #B08040 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 5rem;
     box-shadow: var(--shadow-lg);
+    position: relative;
+    min-height: 300px;
   }
 
   .service-photo-content {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* ── ZASTO + KAKO ── */
@@ -421,21 +431,24 @@
     align-items: start;
   }
   .about-photo {
-    width: 200px; height: 260px;
-    border-radius: 20px;
-    background: linear-gradient(155deg, #D4A870 0%, #B88040 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 4rem;
+    width: 200px;
     flex-shrink: 0;
-    box-shadow: var(--shadow-lg);
+    display: flex; align-items: flex-start; justify-content: center;
   }
+  .about-photo img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
+
   .about-text h2 { margin-bottom: 16px; }
-  .about-text p { font-size: .93rem; color: var(--text); margin-bottom: 12px; }
+  .about-text p { font-size: 17px; color: var(--text); margin-bottom: 12px; }
   .about-text .tagline {
     font-family: 'DM Serif Display', serif;
     font-style: italic;
     color: var(--gold);
-    font-size: 1.15rem;
+    font-size: 22px;
     margin-top: 16px;
   }
 
@@ -453,7 +466,7 @@
   .trust-item {
     display: flex; gap: 10px; align-items: flex-start;
     margin-bottom: 12px;
-    font-size: .86rem; color: var(--muted);
+    font-size: 15px; color: var(--muted);
   }
   .trust-item .chk { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
@@ -639,6 +652,8 @@
     .hamburger { display: flex; }
 
     .badges { grid-template-columns: 1fr 1fr; }
+    .badge { border-right: none; padding-right: 0; }
+    .badge:nth-child(odd) { border-right: 1px solid var(--border); padding-right: 24px; }
 
     .kome-section,
     .services-section,
@@ -661,6 +676,7 @@
 
   @media (max-width: 560px) {
     .badges { grid-template-columns: 1fr; }
+    .badge, .badge:nth-child(odd) { border-right: none; padding-right: 0; }
     .why-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .for-whom { grid-template-columns: 1fr; }
