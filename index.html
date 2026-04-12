@@ -254,27 +254,27 @@
   <div>
     <h2 class="section-title reveal">Šta pružamo?</h2>
     <div class="services-grid reveal">
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('druzenje')" style="cursor:pointer;">
         <span class="svc-icon">💬</span>
         <span>Druženje i razgovor</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('setnje')" style="cursor:pointer;">
         <span class="svc-icon">🚶</span>
         <span>Šetnje i izlasci</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('nabavka')" style="cursor:pointer;">
         <span class="svc-icon">🛒</span>
         <span>Nabavka i obaveze</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('pomoc')" style="cursor:pointer;">
         <span class="svc-icon">🏡</span>
         <span>Lakša pomoć u kući</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('lekar')" style="cursor:pointer;">
         <span class="svc-icon">🚗</span>
         <span>Pratnja kod lekara</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openServiceDialog('podrska')" style="cursor:pointer;">
         <span class="svc-icon">🤲</span>
         <span>Podrška u svakodnevici</span>
       </div>
@@ -365,7 +365,7 @@
 <!-- O NAMA -->
 <section class="about-section" id="o-nama">
   <div class="about-photo reveal">
-    <img src="logo.png" alt="Vreme za njih logo">
+    <img src="logoCopy.png" alt="Vreme za njih logo">
   </div>
   <div class="about-text reveal">
     <h2 class="section-title">O nama</h2>
@@ -517,6 +517,17 @@
   </div>
   <p class="footer-copy">© 2024 Vreme za vas. Sva prava zadržana.</p>
 </footer>
+
+<!-- SERVICE DIALOG -->
+<div class="service-dialog-overlay" id="serviceDialogOverlay" onclick="closeServiceDialog()">
+  <div class="service-dialog" onclick="event.stopPropagation()">
+    <button class="service-dialog-close" onclick="closeServiceDialog()" aria-label="Zatvori">✕</button>
+    <div class="service-dialog-icon" id="serviceDialogIcon"></div>
+    <h3 class="service-dialog-title" id="serviceDialogTitle"></h3>
+    <div class="service-dialog-body" id="serviceDialogBody"></div>
+  </div>
+</div>
+
 
 <script src="main.js" defer></script>
 </body>

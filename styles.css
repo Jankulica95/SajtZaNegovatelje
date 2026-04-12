@@ -431,14 +431,14 @@
     align-items: start;
   }
   .about-photo {
-    width: 200px;
+    width: 400px;
     flex-shrink: 0;
     display: flex; align-items: flex-start; justify-content: center;
   }
   .about-photo img {
     width: 100%;
     border-radius: 24px;
-    box-shadow: var(--shadow-lg);
+    /* box-shadow: var(--shadow-lg); */
     display: block;
   }
 
@@ -684,6 +684,61 @@
     footer { flex-direction: column; text-align: center; }
     .footer-links { justify-content: center; }
   }
+
+  /* ── SERVICE DIALOG ── */
+  .service-dialog-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(40, 32, 15, 0.55);
+    backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+  }
+  .service-dialog-overlay.open { display: flex; }
+
+  .service-dialog {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    padding: 44px 40px 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: fadeUp .3s ease both;
+  }
+  .service-dialog-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none;
+    font-size: 1.1rem; color: var(--muted);
+    cursor: pointer; line-height: 1;
+    transition: color .2s;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+  .service-dialog-close:hover { color: var(--gold); background: var(--gold-pale); }
+
+  .service-dialog-icon {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .service-dialog-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.55rem;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .service-dialog-body p {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 12px;
+    padding-left: 14px;
+    border-left: 3px solid var(--gold-mid);
+  }
+  .service-dialog-body p:last-child { margin-bottom: 0; }
 
   /* Mobile menu */
   .mobile-menu {
