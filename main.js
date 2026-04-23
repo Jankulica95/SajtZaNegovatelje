@@ -122,7 +122,7 @@ function handleContactBtn(e) {
   const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)
     || (navigator.maxTouchPoints > 1 && window.innerWidth < 1024);
   if (isMobile) {
-    window.location.href = 'tel:0601234567';
+    window.location.href = 'tel:063691990';
   } else {
     document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
   }
@@ -143,9 +143,9 @@ async function handleSubmit(e) {
       form.style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
     } else {
-      alert('Došlo je do greške. Molimo kontaktirajte nas direktno na 060 123 45 67.');
+      alert('Došlo je do greške. Molimo kontaktirajte nas direktno na 063 691 990.');
     }
   } catch {
-    alert('Nema internet konekcije. Pozovite nas direktno na 060 123 45 67.');
+    alert('Nema internet konekcije. Pozovite nas direktno na 063 691 990.');
   }
 }
