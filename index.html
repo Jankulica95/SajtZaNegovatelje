@@ -155,7 +155,9 @@
     href="tel:063691990" 
     class="btn-primary" 
     onclick="handleContactBtn(event)" 
-    style="justify-content:center;">📞 063 691 990</a>
+    style="justify-content:center;">📞 063 691 990
+  </a>
+  <span class="working-hours-mobile">Radnim danima 8:00 - 17:00</span>
 </div>
 
 <!-- HERO -->
@@ -173,7 +175,7 @@
         <span class="material-icons">call</span>
         Kontaktirajte nas
       </a>
-      <a href="#usluge" class="btn-secondary">
+      <a href="#saradnja" class="btn-secondary">
         Kako izgleda saradnja
         <span class="material-icons">arrow_downward</span>
       </a>
@@ -288,10 +290,10 @@
 </section>
 
 <!-- ZASTO + KAKO -->
-<section class="why-how-section" style="padding: 72px 5%;">
+<section id="saradnja" class="why-how-section" style="padding: 72px 5%;">
   <div class="why-how">
     <div>
-      <h2 class="section-title reveal">Zašto nas angažuju?</h2>
+      <h2 class="section-title reveal">Zašto da angažujete baš nas</h2>
       <div class="why-grid reveal">
         <div class="why-card">
           <div class="why-icon">😊</div>
@@ -392,20 +394,20 @@
       <h2 class="section-title reveal">Česta pitanja</h2>
       <div class="faq-item reveal">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          Da li ste medicinska nega?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-body">
-          Ne pružamo medicinsku negu, ne dajemo terapiju i ne obavljamo zdravstvene intervencije. Naša uloga je društvo, podrška i pomoć u svakodnevici, a ne lečenje.
-        </div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-trigger" onclick="toggleFaq(this)">
           Šta tačno podrazumeva Vaša usluga?
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
           Naša usluga podrazumeva društvo i laku svakodnevnu pomoć starijim osobama – razgovor, šetnju, kafu, odlazak na kolače ili u pozorište, kao i pomoć u svakodnevnim stvarima poput nabavke, odlaska po lekove, lakših kućnih poslova i pratnje kod lekara.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          Da li ste medicinska nega?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-body">
+          Ne pružamo medicinsku negu, ne dajemo terapiju i ne obavljamo zdravstvene intervencije. Naša uloga je društvo, podrška i pomoć u svakodnevici, a ne lečenje.
         </div>
       </div>
       <div class="faq-item reveal">
@@ -476,15 +478,12 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-            Šta se dešava ako se korisnik razboli tokom boravka?
+            Kako da započnemo saradnju?
           <span class="plus">+</span>
         </button>
         <div class="faq-body">
-          U slučaju da se korisnik tokom boravka ne oseća dobro:
-          •	ostajemo uz njega
-          •	po potrebi pozivamo hitnu pomoć
-          •	odmah obaveštavamo porodicu
-          Ne dajemo terapiju niti donosimo medicinske odluke.
+          Najjednostavnije je da nas kontaktirate pozivom ili popunjavanjem kontakt forme.
+          Kroz kratak razgovor upoznajemo Vaše potrebe ili potrebe nekoga Vama bliskog i predlažemo najprikladniji način saradnje.
         </div>
       </div>
     </div>
@@ -500,7 +499,7 @@
 </section>
 
 <!-- KONTAKT -->
-<section id="kontakt">
+<section id="kontakt" class="contact-section">
   <div class="contact-container">
     <!-- KONTAKT PHOTO -->
     <div class="reveal contact-photo-wrap">
@@ -524,12 +523,15 @@
             <input type="tel" name="telefon" placeholder="Broj telefona" required>
           </div>
           <input type="email" name="email" placeholder="Vaša email adresa" required>
-          <!-- <input type="text" name="poruka_kratka" placeholder="Kratka poruka (opciono)"> -->
           <textarea name="poruka" rows="3" placeholder="Opišite situaciju ili postavite pitanje..." required></textarea>
           <input type="hidden" name="_subject" value="Novi upit – Vreme za vas">
           <input type="text" name="_gotcha" style="display:none">
           <button type="submit" class="btn-submit">Pošaljite poruku</button>
         </form>
+
+        <div class="working-hours-form">
+          Radnim danima od 08-17h
+        </div>
 
         <div class="success-msg" id="successMsg">
           ✅ Poruka je uspešno poslata! Javićemo se uskoro.
@@ -549,7 +551,7 @@
     <a href="#usluge">Usluge</a>
     <a href="#o-nama">O nama</a>
     <a href="#kontakt">Kontakt</a>
-    <a>063 691 990</a>
+    <a href="tel:063691990">063 691 990</a>
     <a href="mailto:vremezavas26@gmail.com">vremezavas26@gmail.com</a>
   </div>
   <p class="footer-copy">© 2026 Vreme za Vas. Sva prava zadržana.</p>
