@@ -47,10 +47,17 @@
     text-decoration: none;
   }
   .logo-icon {
-    width: 42px; height: 42px;
+    width: 54px; height: 54px;
     border-radius: 50%;
+    background: var(--gold-pale);
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
+    flex-shrink: 0;
+  }
+  .logo-icon img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    transform: scale(1.45);
   }
   .logo-text { line-height: 1.1; }
   .logo-text strong {
